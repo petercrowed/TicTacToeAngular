@@ -1,0 +1,119 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background-color: #F5FEF4;
+  font-family: Georgia, Serif;
+  color: #694815;
+  text-align: center;
+}
+.overlay {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.board {
+  margin-top: 50px;
+}
+.row {
+  margin: 0;
+  padding: 0;
+  height: 20%;
+}
+.square {
+  min-height: 70px;
+  min-width: 70px;
+  margin: 0 2px;
+
+  display: inline-block;
+  border-radius: 5px;
+}
+.square > * {
+  max-width: 50%;
+}
+.square-0 {
+  background-color: #DDDDDD;
+}
+.color-1 {
+  color: #1C4AC7;
+}
+.color-2 {
+  color: #F74328;
+}
+.and {
+  color: #DDDDDD;
+}
+
+.square-1 {
+
+  background-color: #FFF;
+    position: relative;
+}
+.square-1:after{
+
+  position: absolute;
+   top: 10;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+  content: '\d7';
+  font-size: 80px;
+  color: #1C4AC7;
+  line-height: 80px;
+   text-align: center;
+
+}
+.square-2 {
+  background-color: #FFF;
+    position: relative;
+}
+.square-2:after{
+     position: absolute;
+     top: -2px;
+     bottom: 0;
+     left: 0;
+     right: 0;
+  content: '\039f';
+  font-size: 60px;
+  color: #F74328;
+  line-height: 80px;
+  text-align: center;
+}
+
+.button {
+  color: #F5FEF4;
+  background-color: #694815;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.title {
+  font-size: 60px;
+}

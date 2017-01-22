@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="game">
+  <head>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+
+    </script>
+
+    <link rel="node_modules/normalize.css/normalize.css">
+    <style>
+
+    </style>
+  </head>
+  <body ng-controller="GameCtrl">
+    <div class="content" ng-show="stage == 'pick'">
+      <h1 class="title"><span class="color-1">eX's</span><span class="and"> &amp; </span> <span class="color-2">Oh's</span> </h1>
+
+              <iframe width="560" height="315"
+                         src="http://www.youtube.com/embed/0uLI6BnVh6w" frameborder="0" allowfullscreen>
+                     </iframe>
+      </iframe>
+      <div>
+        <p>Which Mode?</p>
+        <div class="square button" ng-click="setPlayers(2); next()">1 vs 1</div>
+
+
+      </div>
+    </div>
+
+    <div class="content" ng-show="stage == 'game'">
+      <div class="board full">
+        <div class="row" ng-repeat="(r, row) in squares track by $index">
+          <div ng-repeat="(c, owner) in row track by $index" class="square" ng-class="'square-' + owner" ng-click="play(r, c)"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="overlay" ng-show="showWin">
+      <div class="content">
+        <h1 ng-class="'color-' + winningPlayer">Player {{winningPlayer}} Wins!</h1>
+        <div class="button" ng-click="reset()">New Game</div>
+      </div>
+    </div>
+
+    <div class="overlay" ng-show="showTye">
+      <div class="content">
+        <h1>Game Tied!</h1>
+        <div class="button" ng-click="reset()">New Game</div>
+      </div>
+    </div>
+
+  </body>
+</html>
